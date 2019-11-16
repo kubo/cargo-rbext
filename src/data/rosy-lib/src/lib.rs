@@ -21,7 +21,6 @@ use rosy::prelude::*;
 //   end
 
 extern "C" fn foo1_s_meta(_class: Class) -> AnyObject {
-    eprintln!("line: {}", line!());
     let hash = Hash::<String, AnyObject>::new();
     unsafe {
         let ver = Array::<Integer>::new();
