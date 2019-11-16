@@ -2,21 +2,23 @@ use rosy::prelude::*;
 
 // equivalent ruby code:
 //
-//   class @EXT_CLASSNAME@
-//     def hello(name)
-//       puts "Hello, #{name}!"
-//     end
+//   module @EXT_CLASSNAME@
+//     class MyClass
+//       def hello(name)
+//         puts "Hello, #{name}!"
+//       end
 //
-//     def self.meta
-//       hash = Hash.new()
-//       hash["api_version"] = ...;
-//       hash["copyright"] = RUBY_COPYRIGHT;
-//       hash["description"] = RUBY_DESCRIPTION;
-//       hash["engine"] = RUBY_ENGINE;
-//       hash["platform"] = RUBY_PLATFORM;
-//       hash["release_date"] = RUBY_RELEASE_DATE;
-//       hash["version"] = RUBY_VERSION;
-//       hash
+//       def self.meta
+//         hash = Hash.new()
+//         hash["api_version"] = ...;
+//         hash["copyright"] = RUBY_COPYRIGHT;
+//         hash["description"] = RUBY_DESCRIPTION;
+//         hash["engine"] = RUBY_ENGINE;
+//         hash["platform"] = RUBY_PLATFORM;
+//         hash["release_date"] = RUBY_RELEASE_DATE;
+//         hash["version"] = RUBY_VERSION;
+//         hash
+//       end
 //     end
 //   end
 
@@ -42,7 +44,8 @@ extern "C" fn foo1_s_meta(_class: Class) -> AnyObject {
 #[allow(non_snake_case)]
 #[no_mangle]
 pub extern "C" fn Init_@EXT_BASENAME@() {
-    let class = Class::def("@EXT_CLASSNAME@").unwrap();
+    let module = Module::get_or_def("@EXT_CLASSNAME@").unwrap();
+    let class = module.def_class("MyClass").unwrap();
     rosy::def_method!(class, "hello", |_this, name| {
         println!("Hello, {}!", name);
     })

@@ -86,7 +86,7 @@ fn extension_name<P: AsRef<Path>>(root_dir: P) -> String {
 }
 
 fn run_cargo_command(subcommand: &str, args: &[String]) {
-    print!("  Run comamnd: cargo {}", subcommand);
+    print!("  Run command: cargo {}", subcommand);
     for arg in args.iter() {
         if arg.find(' ').is_some() {
             print!(" \"{}\"", arg);

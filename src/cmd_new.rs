@@ -225,10 +225,15 @@ pub fn main<T: Iterator<Item = String>>(args: T) -> io::Result<()> {
             &key_values,
         )?;
 
-        println!("  Create RubyExt.toml and build.rs");
+        println!("  Create RubyExt.toml, Rakefile and build.rs");
         create_file(
             &dir_path.join("RubyExt.toml"),
             include_str!("data/rosy-lib/RubyExt.toml"),
+            &key_values,
+        )?;
+        create_file(
+            &dir_path.join("Rakefile"),
+            include_str!("data/rosy-lib/Rakefile"),
             &key_values,
         )?;
         create_file(
