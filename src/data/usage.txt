@@ -1,0 +1,12 @@
+cargo-rbext - Cargo subcommand to use Rust from Ruby and vice varsa
+
+USAGE:
+
+  Create a new ruby-binding package
+    cargo ruby new [OPTIONS]
+
+  Compile the current ruby-binding package
+    cargo ruby build [OPTIONS]
+
+  Install a ruby-binding
+    cargo ruby install [OPTIONS]

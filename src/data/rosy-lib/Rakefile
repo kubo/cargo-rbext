@@ -1,0 +1,3 @@
+task :default do |t|
+  system('cargo rbext install', exception: true)
+end

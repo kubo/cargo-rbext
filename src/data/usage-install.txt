@@ -1,0 +1,15 @@
+cargo-rbext - Cargo subcommand to use Rust from Ruby and vice varsa
+
+Usage: cargo rbext install [options]
+
+    Runs `cargo build --release` internally and copis the
+    created cdylib file to the Ruby's site arch directory.
+
+    When the environment variable RUBYARCHDIR is set, the cdylib
+    file is copied to the directory pointed by the variable.
+
+Options:
+
+    -h, --help                  Show this message
+
+    Others options are passed to `cargo build --release` as they are.

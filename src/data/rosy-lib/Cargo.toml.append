@@ -1,0 +1,8 @@
+
+[dependencies.rosy]
+version = "0.0.9"
+default-features = false
+features = ["_skip_linking"]
+
+[lib]
+crate-type = ["cdylib"]

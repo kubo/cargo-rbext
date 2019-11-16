@@ -1,0 +1,23 @@
+cargo-rbext - Cargo subcommand to use Rust from Ruby and vice varsa
+
+Usage: cargo rbext new [options] <path>
+
+    When the `--lib` option is specified, this command
+    executes `cargo new` internally and then modifies
+    `Cargo.toml` and `src/lib.rs` and adds some files.
+
+    Otherwise, it executes `cargo new` internally and then
+    modifies `Cargo.toml` and `src/main.rs`.
+
+Options:
+
+     All `cargo new` options are acceptable. They are passed
+     to `cargo new` as they are except the following case.
+
+     When both `--lib` and `--name <NAME>` are specified, <NAME>
+     is used as a ruby extention name. The last file name part
+     only is passed to the `cargo new` command.
+
+        Example:
+          cargo new-rosy --lib --name foo/bar baz
+          => cargo new --lib --name bar baz

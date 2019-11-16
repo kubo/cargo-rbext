@@ -1,0 +1,18 @@
+cargo-rbext - Cargo subcommand to use Rust from Ruby and vice varsa
+
+Usage: cargo rbext build [options]
+
+    Runs `cargo build --release` internally and copies the
+    created cdylib file to the proper name for ruby extension.
+
+    Difference of rust's cdylib name and ruby extension name
+
+       When the crate name is `example`:
+         platform: cdylib name      -->  ruby extension name
+         Windows:  example.dll      -->  example.so
+         macOS:    libexample.dylib -->  example.bundle
+         Others:   libexample.so    -->  example.so
+
+Options:
+
+    All options are passed to `cargo build` as they are.

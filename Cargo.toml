@@ -1,0 +1,14 @@
+[package]
+name = "cargo-rbext"
+version = "0.0.1"
+authors = ["Kubo Takehiro <kubo@jiubao.org>"]
+repository = "https://github.com/kubo/cargo-rbext"
+license = "BSD-2-Clause"
+keywords = ["cargo", "ruby"]
+readme = "README.md"
+edition = "2018"
+
+[dependencies]
+case = "1.0.0"
+toml = "0.5"
+serde = { version = "1.0", features = ["derive"] }
